@@ -6,14 +6,16 @@ import { Routes, Route, Navigate, Outlet, useLocation } from "react-router-dom";
 import Team from "./pages/Team";
 import { Toaster } from "sonner";
 import Register from "./pages/Register";
+import { useSelector } from "react-redux";
+import SideBar from "./components/SideBar";
 
 function Layout() {
-  const user = "";
+  const { user } = useSelector((state) => state.auth);
   const location = useLocation();
   return user ? (
     <div className="w-full h-screen flex flex-col md:flex-row">
       <div className="w-1/5 h-screen bg-white sticky top-0 hidden md:block ">
-        {/* {<SideBar/>} */}
+        {<SideBar />}
       </div>
       {/* {<MobileSideBar/>} */}
       <div className="flex-1 overflow-y-auto">
@@ -31,6 +33,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Navigate to={"/dashboard"} />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/completed/ :status" element={<Tasks />} />
           <Route path="/In-progress/ :status" element={<Tasks />} />

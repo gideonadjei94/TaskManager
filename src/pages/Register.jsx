@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const user = "";
+  const { user } = useSelector((state) => state.auth);
   const {
     register,
     handleSubmit,
@@ -15,16 +16,18 @@ const Register = () => {
   const submitHandler = async (data) => {
     console.log("Submitted");
   };
+  console.log(user);
   useEffect(() => {
     user && navigate("/dashboard");
   }, [user]);
+
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
     setIsActive(!isActive);
   };
 
   return (
-    <div className="bg-blue-200 bg-gradient-to-r from-gray-200 to-blue-200 h-screen flex items-center justify-center flex-col">
+    <div className="bg-blue-200 bg-gradient-to-r from-gray-200 to-blue-200 h-screen flex items-center justify-center flex-col ">
       <div
         className={`bg-white rounded-2xl shadow-md relative overflow-hidden w-[768px] max-w-full min-h-[400px] contain ${
           isActive ? "active" : ""
