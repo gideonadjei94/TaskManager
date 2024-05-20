@@ -126,9 +126,7 @@
     box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
   }
 }
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+#input {
   background-color: #eee;
   border: none;
   margin: 5px 0;

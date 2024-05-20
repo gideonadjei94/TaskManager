@@ -3,7 +3,7 @@ import TaskDetails from "./pages/TaskDetails";
 import Trash from "./pages/Trash";
 import Tasks from "./pages/Tasks";
 import { Routes, Route, Navigate, Outlet, useLocation } from "react-router-dom";
-import Team from "./pages/Team";
+// import Team from "./pages/Team";
 import { Toaster } from "sonner";
 import Register from "./pages/Register";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +14,7 @@ import { IoClose } from "react-icons/io5";
 import { Transition } from "@headlessui/react";
 import clsx from "clsx";
 import { setOpenSidebar } from "./redux/slices/authSlice";
+import Users from "./pages/Team";
 
 function Layout() {
   const { user } = useSelector((state) => state.auth);
@@ -92,12 +93,12 @@ function App() {
           <Route path="/" element={<Navigate to={"/dashboard"} />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/tasks" element={<Tasks />} />
-          <Route path="/completed/ :status" element={<Tasks />} />
-          <Route path="/In-progress/ :status" element={<Tasks />} />
-          <Route path="/todo/ :status" element={<Tasks />} />
-          <Route path="/team" element={<Team />} />
+          <Route path="/completed/:status" element={<Tasks />} />
+          <Route path="/In-progress/:status" element={<Tasks />} />
+          <Route path="/todo/:status" element={<Tasks />} />
+          <Route path="/team" element={<Users />} />
           <Route path="/trashed" element={<Trash />} />
-          <Route path="/task/ :id" element={<TaskDetails />} />
+          <Route path="/task/:id" element={<TaskDetails />} />
         </Route>
 
         <Route path="/logIn" element={<Register />} />

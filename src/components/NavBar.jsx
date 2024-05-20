@@ -17,7 +17,7 @@ const NavBar = () => {
         >
           ☰
         </button>
-        <div className="w-64 2xl:w-[400px] flex items-center  px-3 gap-2 rounded-full bg-[#f3f4f6]">
+        <div className="w-64 2xl:w-[400px] flex items-center py-3 px-3 gap-2 rounded-full bg-[#f3f4f6]">
           <MdOutlineSearch className="text-xl text-gray-500" />
           <input
             type="text"

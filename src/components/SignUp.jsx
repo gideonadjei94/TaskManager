@@ -29,31 +29,27 @@ const SignUp = ({ toggleForm }) => {
           Hey There!
         </p>
         <p className="text-center text-base text-gray-700 ">
-          SignUp with email and password.
+          Fill form to create a team.
         </p>
         <div className="flex flex-col ">
-          <input type="text" placeholder="Full Name" required />
-          <input type="email" placeholder="Email" required />
-          <input type="password" placeholder="Password" required />
-          <div className="flex items-center">
-            <input
-              type="checkbox"
-              className="mr-2"
-              checked={isAdmin}
-              onChange={toggleAdmin}
-            />
-            <label className="text-[13px]">Are you an Admin?</label>
-          </div>
+          <input type="text" placeholder="Full Name" id="input" required />
+          <input type="email" placeholder="Email" id="input" required />
+          <input
+            type="text"
+            placeholder="Role eg. Backend Developer"
+            id="input"
+            required
+          />
           <button className="bg-blue-700 text-white text-sm py-2 px-12 mt-2 border rounded-md font-bold tracking-wider uppercase w-full">
-            Register
+            Create Team
           </button>
           <div className="flex items-center justify-center text-[12px] mt-5">
-            <p className="font-semibold">Already have an account?</p>
+            <p className="font-semibold">Already have a team?</p>
             <button
               className="text-blue-700 font-semibold"
               onClick={handleSignupClick}
             >
-              Login
+              Join Team
             </button>
           </div>
         </div>
