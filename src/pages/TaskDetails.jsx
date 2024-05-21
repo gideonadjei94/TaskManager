@@ -90,7 +90,7 @@ const TaskDetails = () => {
   const { id } = useParams();
 
   const [selected, setSelected] = useState(0);
-  const task = tasks[3];
+  const task = tasks[0];
 
   return (
     <div className="w-full flex flex-col gap-3 mb-4 overflow-y-hidden">

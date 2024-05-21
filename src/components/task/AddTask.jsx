@@ -9,7 +9,7 @@ import Button from "../Button";
 import Textbox from "../Textbox";
 
 const LISTS = ["TODO", "IN PROGRESS", "COMPLETED"];
-const PRIORIRY = ["HIGH", "MEDIUM", "NORMAL", "LOW"];
+const PRIORITY = ["HIGH", "MEDIUM", "NORMAL", "LOW"];
 
 const uploadedFileURLs = [];
 
@@ -24,7 +24,7 @@ const AddTask = ({ open, setOpen }) => {
   const [team, setTeam] = useState(task?.team || []);
   const [stage, setStage] = useState(task?.stage?.toUpperCase() || LISTS[0]);
   const [priority, setPriority] = useState(
-    task?.priority?.toUpperCase() || PRIORIRY[2]
+    task?.priority?.toUpperCase() || PRIORITY[2]
   );
   const [assets, setAssets] = useState([]);
   const [uploading, setUploading] = useState(false);
@@ -85,7 +85,7 @@ const AddTask = ({ open, setOpen }) => {
             <div className="flex gap-4">
               <SelectList
                 label="Priority Level"
-                lists={PRIORIRY}
+                lists={PRIORITY}
                 selected={priority}
                 setSelected={setPriority}
               />
