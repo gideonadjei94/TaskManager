@@ -53,7 +53,7 @@ const Users = () => {
       </td>
 
       <td className="p-2">{user.title}</td>
-      <td className="p-2">{user.email || "user.emal.com"}</td>
+      <td className="p-2">{user.email || "user.email.com"}</td>
       <td className="p-2">{user.role}</td>
 
       <td>
@@ -89,16 +89,6 @@ const Users = () => {
   return (
     <>
       <div className="w-full md:px-1 px-0 mb-6">
-        <div className="flex items-center justify-between mb-8">
-          <Title title="  Team Members" />
-          <Button
-            label="Add New User"
-            icon={<IoMdAdd className="text-lg" />}
-            className="flex flex-row-reverse gap-1 items-center bg-blue-600 text-white rounded-md 2xl:py-2.5"
-            onClick={() => setOpen(true)}
-          />
-        </div>
-
         <div className="bg-white px-2 md:px-4 py-4 shadow-md rounded">
           <div className="overflow-x-auto">
             <table className="w-full mb-5">
@@ -112,13 +102,6 @@ const Users = () => {
           </div>
         </div>
       </div>
-
-      {/* <AddUser
-        open={open}
-        setOpen={setOpen}
-        userData={selected}
-        key={new Date().getTime().toString()}
-      /> */}
 
       <ConfirmationDialog
         open={openDialog}
